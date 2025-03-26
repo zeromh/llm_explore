@@ -1,6 +1,8 @@
 black
+datasets
 flake8
 ipython
+ipykernel
 isort
 jupyterlab
 loguru
@@ -12,6 +14,9 @@ pip
 pytest
 python-dotenv
 scikit-learn
+torch
+torchdata
 tqdm
+transformers
 typer
 -e .
