@@ -9,7 +9,7 @@ jupyterlab
 loguru
 matplotlib
 notebook
-numpy
+numpy < 2 # must install transformers with conda if we want a newer numpy
 pandas
 pip
 pytest
