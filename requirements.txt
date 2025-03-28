@@ -3,6 +3,7 @@ datasets
 flake8
 ipython
 ipykernel
+ipywidgets
 isort
 jupyterlab
 loguru
