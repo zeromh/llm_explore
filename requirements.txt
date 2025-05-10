@@ -1,5 +1,6 @@
 black
 datasets
+evaluate
 flake8
 ipython
 ipykernel
@@ -7,16 +8,19 @@ ipywidgets
 isort
 jupyterlab
 loguru
+loralib
 matplotlib
 notebook
-numpy < 2 # must install transformers with conda if we want a newer numpy
-pandas
+# numpy < 2 # must install transformers with conda if we want a newer numpy
+# pandas
+peft
 pip
 pytest
 python-dotenv
-scikit-learn
-torch
-torchdata
+rouge_score
+# scikit-learn
+# torch
+# torchdata
 tqdm
 transformers
 typer

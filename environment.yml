@@ -1,0 +1,17 @@
+name: llm_explore
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pytorch
+  - torchvision
+  - torchaudio
+  - torchdata
+  - pip
+  - pip:
+      - -r requirements.txt
