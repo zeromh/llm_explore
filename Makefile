@@ -11,15 +11,6 @@ PYTHON_INTERPRETER = python
 #################################################################################
 
 
-## Install Python dependencies
-.PHONY: requirements
-requirements:
-	$(PYTHON_INTERPRETER) -m pip install -U pip
-	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
-	
-
-
-
 ## Delete all compiled Python files
 .PHONY: clean
 clean:
@@ -48,12 +39,11 @@ test:
 	python -m pytest tests
 
 
-## Set up Python interpreter environment
-.PHONY: create_environment
-create_environment:
+## Set up Python interpreter environment and install dependencies
+.PHONY: setup
+setup:
 	
-	conda create --name $(PROJECT_NAME) python=$(PYTHON_VERSION) -y
-	
+	conda env create -f environment.yml -y
 	@echo ">>> conda env created. Activate with:\nconda activate $(PROJECT_NAME)"
 	
 
