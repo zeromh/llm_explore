@@ -76,6 +76,7 @@ Summary:
 def get_model_completion(prompt, tokenizer, model, gen_config=None, do_sample=False, max_new_tokens=1000, num_beams=1):
     """
     Generates a model completion for a given prompt.
+    Uses same device as model for encoding and decoding.
 
     Args:
         prompt (str): The input prompt for the model.
@@ -89,7 +90,7 @@ def get_model_completion(prompt, tokenizer, model, gen_config=None, do_sample=Fa
     Returns:
         str: The decoded model output.
     """
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = next(model.parameters()).device
     sentence_encoded = tokenizer(prompt, return_tensors='pt').to(device)
     completion = model.generate(
         input_ids=sentence_encoded.input_ids,
